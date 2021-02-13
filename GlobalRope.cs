@@ -1,5 +1,6 @@
 ﻿using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace QuickRope
@@ -83,6 +84,9 @@ namespace QuickRope
 				// Place the tile
 				WorldGen.PlaceTile(tileTargetX, tileTargetY, type);
 				heldItem.stack--;
+
+				if (Main.netMode != NetmodeID.SinglePlayer)
+					NetMessage.SendData(MessageID.TileChange, -1, -1, null, 1, tileTargetX, tileTargetY, type);
 			}
 		}
 	}
