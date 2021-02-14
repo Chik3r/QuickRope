@@ -1,2 +1,0 @@
-Ever wanted to quickly place ropes? Then download this mod and right click on a rope!
-The number of ropes placed and the time between placements can be configured inside the mod's config
