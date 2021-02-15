@@ -1,0 +1,5 @@
+Ever wanted to quickly place ropes? Then download this mod and right click where you want a nearby rope to be to quickly drop it to the floor.
+
+The number of ropes placed and the time between placements can be configured inside the mod's config.
+
+Edited by hamstar
