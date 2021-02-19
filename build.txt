@@ -1,5 +1,5 @@
 displayName = Quick Ropes
 author = Chik3r
-version = 0.2.0
+version = 0.2.1
 homepage = https://github.com/Chik3r/QuickRope
 buildIgnore=QuickRope/bin/*,QuickRope/obj/*
