@@ -29,7 +29,7 @@ namespace QuickRope {
 			// If the tile isn't a rope, return
 			int tileType = item.createTile;
 			if( tileType < 0 || tileType >= Main.tileRope.Length || !Main.tileRope[tileType] ) {
-				return true;
+				return false;
 			}
 
 			int tileX = (int)Main.MouseWorld.X / 16;
