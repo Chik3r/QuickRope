@@ -35,6 +35,10 @@ namespace QuickRope {
 			int tileX = (int)Main.MouseWorld.X / 16;
 			int tileY = (int)Main.MouseWorld.Y / 16;
 
+			if( !QuickRopeMod.RunRopePlacementHooks(player, item, tileX, tileY) ) {
+				return false;
+			}
+
 			// Get the position of the player as tile coordinates
 			var playerPos = player.Center.ToTileCoordinates().ToVector2();
 			// Get the distance and max range of the player
@@ -60,7 +64,7 @@ namespace QuickRope {
 		}
 
 
-		////
+		////////////////
 
 		private void PlaceOrExtendARopeAt( Player player, int i, int j, Item ropeItem, int ropeCount ) {
 			int tileType = ropeItem.createTile;
