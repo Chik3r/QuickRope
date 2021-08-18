@@ -3,3 +3,5 @@ Ever wanted to quickly place ropes? Then download this mod and right click where
 The number of ropes placed and the time between placements can be configured inside the mod's config.
 
 Edited by hamstar
+
+v0.3.0: Added QuickRopeMod.AddRopePlacementHook - Thanks hamstar
