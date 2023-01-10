@@ -13,7 +13,7 @@ namespace QuickRope {
 				return;
 			}
 
-			tooltips.Add( new TooltipLine(this.Mod, "QuickRopeTip", "Right-click to place ropes quickly") );
+			tooltips.Add( new TooltipLine(Mod, "QuickRopeTip", "Right-click to place ropes quickly") );
 		}
 
 
@@ -52,9 +52,9 @@ namespace QuickRope {
 				return true;
 			}
 
-			var config = ModContent.GetInstance<RopeConfig>();
+			RopeConfig config = ModContent.GetInstance<RopeConfig>();
 
-			this.PlaceOrExtendARopeAt( player, tileX, tileY, item, config.RopesToPlace );
+			PlaceOrExtendARopeAt( player, tileX, tileY, item, config.RopesToPlace );
 
 			player.itemTime = config.TimeBetweenRopes;
 			player.itemAnimation = config.TimeBetweenRopes;
@@ -80,7 +80,7 @@ namespace QuickRope {
 
 				// The code below was copied (and altered) from Player.PlaceThing()
 
-				if( !this.IsTileValidForRopePlacement(tileTargetX, ref tileTargetY) ) {
+				if( !IsTileValidForRopePlacement(tileTargetX, ref tileTargetY) ) {
 					return;
 				}
 
@@ -112,7 +112,7 @@ namespace QuickRope {
 
 			Tile tile = Main.tile[tileX, tileY];
 			if( !tile.HasTile ) {
-				return this.IsValidRopeAnchor( tileX, tileY );
+				return IsValidRopeAnchor( tileX, tileY );
 			}
 
 			// If the tile at the target pos isn't active, or it isn't a rope, end the function

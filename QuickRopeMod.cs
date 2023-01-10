@@ -6,9 +6,6 @@ using Terraria.ModLoader;
 namespace QuickRope {
 	public delegate bool PlaceRopeHook( Player player, Item ropeItem, int tileX, int tileY );
 
-
-
-
 	public class QuickRopeMod : Mod {
 		public static bool AddRopePlacementHook( PlaceRopeHook hook ) {
 			return ModContent.GetInstance<QuickRopeMod>().PlaceRopeHooks.Add( hook );
