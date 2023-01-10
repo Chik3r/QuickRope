@@ -13,7 +13,7 @@ namespace QuickRope {
 				return;
 			}
 
-			tooltips.Add( new TooltipLine(this.mod, "QuickRopeTip", "Right-click to place ropes quickly") );
+			tooltips.Add( new TooltipLine(this.Mod, "QuickRopeTip", "Right-click to place ropes quickly") );
 		}
 
 
@@ -97,11 +97,11 @@ namespace QuickRope {
 
 		private bool IsTileValidForRopePlacement( int tileX, ref int tileY ) {
 			bool IsTileValidExtendableRope( int x, int y ) {
-				return Main.tile[x, y].active()
-					&& Main.tileRope[Main.tile[x, y].type]
+				return Main.tile[x, y].HasTile
+					&& Main.tileRope[Main.tile[x, y].TileType]
 					&& y < Main.maxTilesX - 5
 					&& Main.tile[x, y + 2] != null
-					&& !Main.tile[x, y + 1].lava();
+					&& !(Main.tile[x, y + 1].LiquidType == LiquidID.Lava);
 			}
 
 			//
@@ -111,12 +111,12 @@ namespace QuickRope {
 			}
 
 			Tile tile = Main.tile[tileX, tileY];
-			if( !tile.active() ) {
+			if( !tile.HasTile ) {
 				return this.IsValidRopeAnchor( tileX, tileY );
 			}
 
 			// If the tile at the target pos isn't active, or it isn't a rope, end the function
-			if( !Main.tileRope[tile.type] ) {
+			if( !Main.tileRope[tile.TileType] ) {
 				return false;
 			}
 
@@ -133,7 +133,7 @@ namespace QuickRope {
 			}
 
 			// Is next tile a non-rope solid?
-			if( Main.tile[tileX, scanY].active() ) {
+			if( Main.tile[tileX, scanY].HasTile ) {
 				return false;
 			}
 
@@ -148,24 +148,24 @@ namespace QuickRope {
 			Tile tileD = Main.tile[tileX, tileY - 1];
 			Tile tileU = Main.tile[tileX, tileY + 1];
 
-			if( tileD.wall > 0 || tileU.wall > 0 || tileL.wall > 0 || tileR.wall > 0 ) {
+			if( tileD.WallType > 0 || tileU.WallType > 0 || tileL.WallType > 0 || tileR.WallType > 0 ) {
 				return true;
 			}
 
-			int typeR = tileR.type;
-			if( tileR.active() && (Main.tileSolid[typeR] || Main.tileRope[typeR] || tileR.type == 314) ) {
+			int typeR = tileR.TileType;
+			if( tileR.HasTile && (Main.tileSolid[typeR] || Main.tileRope[typeR] || tileR.TileType == 314) ) {
 				return true;
 			}
-			int typeL = tileL.type;
-			if( (tileL.active() && (Main.tileSolid[typeL] || Main.tileRope[typeL] || tileL.type == 314)) ) {
+			int typeL = tileL.TileType;
+			if( (tileL.HasTile && (Main.tileSolid[typeL] || Main.tileRope[typeL] || tileL.TileType == 314)) ) {
 				return true;
 			}
-			int typeU = tileU.type;
-			if( (tileU.active() && (Main.tileSolid[typeU] || tileU.type == 124 || Main.tileRope[typeU] || tileU.type == 314)) ) {
+			int typeU = tileU.TileType;
+			if( (tileU.HasTile && (Main.tileSolid[typeU] || tileU.TileType == 124 || Main.tileRope[typeU] || tileU.TileType == 314)) ) {
 				return true;
 			}
-			int typeD = tileD.type;
-			if( (tileD.active() && (Main.tileSolid[typeD] || tileD.type == 124 || Main.tileRope[typeD] || tileD.type == 314)) ) {
+			int typeD = tileD.TileType;
+			if( (tileD.HasTile && (Main.tileSolid[typeD] || tileD.TileType == 124 || Main.tileRope[typeD] || tileD.TileType == 314)) ) {
 				return true;
 			}
 

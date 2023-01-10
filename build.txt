@@ -1,5 +1,4 @@
 displayName = Quick Ropes
 author = Chik3r
-version = 0.3.0
-buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*
+version = 0.4.0
 homepage = https://github.com/Chik3r/QuickRope
