@@ -89,7 +89,7 @@ namespace QuickRope {
 				ropeItem.stack--;
 
 				if( Main.netMode != NetmodeID.SinglePlayer ) {
-					NetMessage.SendData( MessageID.TileChange, -1, -1, null, 1, tileTargetX, tileTargetY, tileType );
+					NetMessage.SendData( MessageID.TileManipulation, -1, -1, null, 1, tileTargetX, tileTargetY, tileType );
 				}
 			}
 		}
