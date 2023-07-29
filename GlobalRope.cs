@@ -171,5 +171,10 @@ namespace QuickRope {
 
 			return false;
 		}
+
+		public override bool AppliesToEntity(Item entity, bool lateInstantiation) {
+			int tileType = entity.createTile;
+			return lateInstantiation && ( tileType >= 0 && tileType < Main.tileRope.Length && Main.tileRope[tileType] );
+		}
 	}
 }
