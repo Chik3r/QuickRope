@@ -1,0 +1,19 @@
+Configs: {
+	RopeConfig: {
+		TimeBetweenRopes: {
+			Tooltip:
+				'''
+				Amount of ticks before a rope can be placed with right click again
+				One second is the same as 60 ticks
+				'''
+			Label: Ticks between placement
+		}
+
+		RopesToPlace: {
+			Tooltip: ""
+			Label: Amount of ropes to place when a rope is right clicked
+		}
+
+		DisplayName: Rope Config
+	}
+}
