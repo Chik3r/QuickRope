@@ -4,6 +4,7 @@ The number of ropes placed and the time between placements can be configured ins
 
 Edited by hamstar
 
+v0.4.2: Fixed right click only happening once. Update to localization changes
 v0.4.1: 1.4.4 preview support
 v0.4.0: 1.4 support
 v0.3.0: Added QuickRopeMod.AddRopePlacementHook - Thanks hamstar
